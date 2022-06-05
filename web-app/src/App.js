@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Container } from '@mui/material';
+import { TextField } from '@mui/material';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class ControlledFormComponent extends Component {  
+    render() {  
+      return (
+        <Container>
+            <div>
 
-export default App;
+                <TextField
+                required
+                id="standard-required"
+                label="Логин"
+                variant="standard"
+                />
+                <TextField
+                required
+                id="standard-password-input"
+                label="Пароль"
+                type="password"
+                autoComplete="current-password"
+                variant="standard"
+                />
+            </div>
+        </Container> 
+      );  
+    }  
+  }  
+    
+export default ControlledFormComponent;
