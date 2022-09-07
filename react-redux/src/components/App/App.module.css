@@ -1,6 +1,13 @@
+* {
+    box-sizing: border-box;
+    font-family: montserrat, sans-serif;
+}
+
 .appContainer {
     margin: 0 auto;
     width: 1200px;
+    height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
