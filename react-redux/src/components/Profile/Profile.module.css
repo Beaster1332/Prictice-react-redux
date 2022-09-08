@@ -1,19 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
 .profileBlock {
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
 }
 
 .infoBlock {
-    width: 100vh;
+    width: 1200px;
     padding: 10px 13px;
     margin-bottom: 10px;
     border: 3px solid black;
 }
 
+.logoutItem {
+    transition: all ease 0.2s;
+    cursor: pointer;
+}
+
+.logoutItem:hover {
+    font-weight: 600;
+    color: red;
+}
+
+.logoutItem:active {
+    font-size: 15px;
+    font-weight: 500;
+}
+
 .todoBlock {
-    width: 100%;
+    width: 1200px;
+    min-height: 600px;
     padding: 10px 13px;
     border: 3px solid black;
 }

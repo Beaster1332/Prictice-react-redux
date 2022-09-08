@@ -2,16 +2,19 @@ import React from "react";
 import { connect } from "react-redux";
 import Profile from "./Profile";
 import { addTodoAC } from "../../redux/profileReducer";
+import { logoutUserAC } from "../../redux/loginReducer";
 
 const mapStateToProps = (state) => {
     return {
         name: state.loginReducer.name,
+        todos: state.profileReducer.todos,
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addTodo: (todoItem) => dispatch(addTodoAC(todoItem)),
+        addTodo: (todoText) => dispatch(addTodoAC(todoText)),
+        logoutUser: () => dispatch(logoutUserAC()),
     }
 }
 
