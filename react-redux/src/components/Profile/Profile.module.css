@@ -31,8 +31,19 @@
 }
 
 .todoBlock {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     width: 1200px;
     min-height: 600px;
     padding: 10px 13px;
     border: 3px solid black;
+}
+
+.todoCreateBlock {
+
+}
+
+.todoItemsBlock {
+
 }

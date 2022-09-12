@@ -13,7 +13,7 @@ const Form = (props) => {
         reset,
         handleSubmit
     } = useForm({
-        mode: "onBlur",
+        mode: 'onBlur'
     });
 
     let onSubmit = ({ login, name, password }) => {

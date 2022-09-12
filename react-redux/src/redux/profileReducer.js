@@ -7,13 +7,11 @@ let initialState = {
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TODO:
-            let newTodo = {
-                todoText: action.todoText,
-            };
+            let todoText = action.todoText;
 
             return {
                 ...state,
-                todos: [...state.todos, newTodo],
+                todos: [...state.todos, {todo: todoText}],
             }
         default:
             return state;
