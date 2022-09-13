@@ -13,7 +13,7 @@ const Profile = (props) => {
         props.addTodo(todoText);
     }
 
-    let todoItems = props.todos.map(t => <TodoItem todo={t.todo} />)
+    let todoItems = props.todos.map(todo => <TodoItem key={todo.id} todo={todo} />)
 
     return <div className={classes.profileBlock}>
         <div className={classes.infoBlock}>

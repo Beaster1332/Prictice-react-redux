@@ -1,3 +1,5 @@
+import {v4 as uuidv4} from 'uuid';
+
 const ADD_TODO = 'profile/ADD_TODO';
 
 let initialState = {
@@ -11,7 +13,7 @@ const profileReducer = (state = initialState, action) => {
 
             return {
                 ...state,
-                todos: [...state.todos, {todo: todoText}],
+                todos: [...state.todos, {id: uuidv4(), todo: todoText}],
             }
         default:
             return state;

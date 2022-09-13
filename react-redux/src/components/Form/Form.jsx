@@ -2,6 +2,7 @@ import React from "react";
 import { Navigate } from 'react-router-dom';
 import classes from './Form.module.css';
 import { useForm } from 'react-hook-form';
+import { TextField } from "./TextField";
 
 const Form = (props) => {
     const {
@@ -27,6 +28,14 @@ const Form = (props) => {
         return (
             <div>
                 <form onSubmit={handleSubmit(onSubmit)}>
+                    {/* <TextField
+                        name={"Login"}
+                        placeholder={"Login"}
+                        formName={"Login"}
+                        required={'Required field!'}
+                        minLength={3}
+                        register={register}
+                    /> */}
                     <label className={classes.label}>
                         <span className={classes.inputLabel}>Login:</span>
                         <div className={classes.inputBlock}>
@@ -46,6 +55,13 @@ const Form = (props) => {
                     <div>
                         {errors?.login && <p>{errors?.login?.message || 'Error!'}</p>}
                     </div>
+                    {/* <TextField
+                        name={"Name"}
+                        placeholder={"Name"}
+                        formName={"name"}
+                        required={'Required field!'}
+                        register={register}
+                    /> */}
                     <label className={classes.label}>
                         <span className={classes.inputLabel}>Name:</span>
                         <div className={classes.inputBlock}>
@@ -61,6 +77,15 @@ const Form = (props) => {
                     <div>
                         {errors?.name && <p>{errors?.name?.message}</p>}
                     </div>
+                    {/* <TextField
+                        name={"Password"}
+                        placeholder={"Password"}
+                        formName={"password"}
+                        required={'Required field!'}
+                        type={"password"}
+                        minLength={8}
+                        register={register}
+                    /> */}
                     <label className={classes.label}>
                         <span className={classes.inputLabel}>Password:</span>
                         <div className={classes.inputBlock}>
