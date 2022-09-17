@@ -1,0 +1,41 @@
+.todoForm {
+    padding: 30px 0px;
+}
+
+.todoInput {
+    display: block;
+    min-width: 300px;
+    min-height: 50px;
+    padding: 5px 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all ease-in 0.2s;
+}
+
+.todoButton {
+    display: block;
+    width: 100px;
+    height: 40px;
+    margin: 20px auto 0 auto;
+    border: none;
+    border-radius: 5px;
+    background-color: #27BAFF;
+    color: #fff;
+    font-weight: 600;
+    transition: all ease-in 0.1s;
+}
+
+.todoInput:focus {
+    border: 3px solid black;
+    transform: scale(1.05);
+}
+
+.todoButton:hover {
+    transform: scale(1.05);
+}
+
+.todoButton:active {
+    transform: scale(1.02);
+}

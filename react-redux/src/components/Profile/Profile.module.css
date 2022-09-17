@@ -41,9 +41,15 @@
 }
 
 .todoCreateBlock {
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 150px;
+    width: 100%;
+    border-bottom: 2px solid black;
 }
 
 .todoItemsBlock {
-
+    margin-top: 30px;
+    background-color: #E8E8E8;
 }
