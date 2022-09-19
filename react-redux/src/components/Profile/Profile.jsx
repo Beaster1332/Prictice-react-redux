@@ -30,7 +30,7 @@ const Profile = (props) => {
                 <TodoForm onSubmit={addTodo} />
             </div>
             <div className={classes.todoItemsBlock}>
-                {todoItems}
+                {props.todos.length === 0 ? <div className={classes.noTodoBlock}>No todos yet...</div> : todoItems}
             </div>
         </div>
     </div>

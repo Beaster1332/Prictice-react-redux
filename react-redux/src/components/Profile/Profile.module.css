@@ -31,9 +31,6 @@
 }
 
 .todoBlock {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     width: 1200px;
     min-height: 600px;
     padding: 10px 13px;
@@ -50,6 +47,18 @@
 }
 
 .todoItemsBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 375px;
+    padding: 30px 15px;
     margin-top: 30px;
-    background-color: #E8E8E8;
+    background-color: #F7F7F7;
+}
+
+.noTodoBlock {
+    padding: 10px 12px;
+    border: 1px solid black;
+    font-weight: 500;
 }

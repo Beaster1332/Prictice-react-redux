@@ -10,11 +10,9 @@ let initialState = {
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TODO:
-            let todoText = action.todoText;
-
             return {
                 ...state,
-                todos: [...state.todos, {id: uuidv4(), text: todoText}],
+                todos: [...state.todos, {id: uuidv4(), text: action.todoText}],
             }
         case DELETE_TODO:
             return {
