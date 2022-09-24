@@ -1,19 +1,20 @@
+import React from "react"
 import classes from "./Form.module.css"
 
-export const TextField = props => {
+export const TextField = ({ name, placeholder, register, fieldName, required, minLength, type }) => {
     return (
         <label className={classes.label}>
-            <span className={classes.inputLabel}>{props.name}:</span>
+            <span className={classes.inputLabel}>{`${name}:`}</span>
             <div className={classes.inputBlock}>
                 <input
                     className={classes.input}
-                    placeholder={props.placeholder}
-                    type={props.type}
-                    {...props.register(props.formName, {
-                        required: props.required,
+                    type={type}
+                    placeholder={placeholder}
+                    {...register(fieldName, {
+                        required: required,
                         minLength: {
-                            value: props.minLegth,
-                            message: `Minimal length is ${props.minLegth} symbols!`
+                            value: minLength,
+                            message: `Minimal length is ${minLength} symbols!`
                         }
                     })}
                 />

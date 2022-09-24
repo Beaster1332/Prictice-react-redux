@@ -7,6 +7,7 @@ const Profile = (props) => {
 
     const logoutUser = () => {
         props.logoutUser();
+        props.deleteAllTodo();
     }
     
     const addTodo = (todoText) => {

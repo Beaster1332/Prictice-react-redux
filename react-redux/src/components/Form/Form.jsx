@@ -28,81 +28,36 @@ const Form = (props) => {
         return (
             <div>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    {/* <TextField
+                    <TextField
                         name={"Login"}
                         placeholder={"Login"}
-                        formName={"Login"}
+                        fieldName={"login"}
                         required={'Required field!'}
                         minLength={3}
                         register={register}
-                    /> */}
-                    <label className={classes.label}>
-                        <span className={classes.inputLabel}>Login:</span>
-                        <div className={classes.inputBlock}>
-                            <input
-                                className={classes.input}
-                                placeholder={'Login'}
-                                {...register('login', {
-                                    required: 'Required field!',
-                                    minLength: {
-                                        value: 3,
-                                        message: 'Minimal length is 3 symbols!'
-                                    }
-                                })}
-                            />
-                        </div>
-                    </label>
+                    />
                     <div>
                         {errors?.login && <p>{errors?.login?.message || 'Error!'}</p>}
                     </div>
-                    {/* <TextField
+                    <TextField
                         name={"Name"}
                         placeholder={"Name"}
-                        formName={"name"}
+                        fieldName={"name"}
                         required={'Required field!'}
                         register={register}
-                    /> */}
-                    <label className={classes.label}>
-                        <span className={classes.inputLabel}>Name:</span>
-                        <div className={classes.inputBlock}>
-                            <input
-                                className={classes.input}
-                                placeholder={'Name'}
-                                {...register('name', {
-                                    required: 'Required field!',
-                                })}
-                            />
-                        </div>
-                    </label>
+                    />
                     <div>
                         {errors?.name && <p>{errors?.name?.message}</p>}
                     </div>
-                    {/* <TextField
+                    <TextField
                         name={"Password"}
                         placeholder={"Password"}
-                        formName={"password"}
+                        fieldName={"password"}
                         required={'Required field!'}
                         type={"password"}
                         minLength={8}
                         register={register}
-                    /> */}
-                    <label className={classes.label}>
-                        <span className={classes.inputLabel}>Password:</span>
-                        <div className={classes.inputBlock}>
-                            <input
-                                className={classes.input}
-                                placeholder={'Password'}
-                                type={'password'}
-                                {...register('password', {
-                                    required: 'Required field!',
-                                    minLength: {
-                                        value: 8,
-                                        message: 'Minimal length is 8 symbols!'
-                                    }
-                                })}
-                            />
-                        </div>
-                    </label>
+                    />
                     <div>
                         {errors?.password && <p>{errors?.password?.message || 'Error!'}</p>}
                     </div>

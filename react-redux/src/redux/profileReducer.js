@@ -2,6 +2,7 @@ import {v4 as uuidv4} from 'uuid';
 
 const ADD_TODO = 'profile/ADD_TODO';
 const DELETE_TODO = 'profile/DELETE_TODO';
+const DELETE_ALL_TODO = 'profile/DELETE_ALL_TODO';
 
 let initialState = {
     todos: [],
@@ -19,6 +20,11 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 todos: [...state.todos.filter(el => el.id !== action.todoId)]
             }
+        case DELETE_ALL_TODO:
+            return {
+                ...state,
+                todos: []
+            }
         default:
             return state;
     }
@@ -26,5 +32,6 @@ const profileReducer = (state = initialState, action) => {
 
 export const addTodoAC = (todoText) => ({ type: ADD_TODO, todoText });
 export const deleteTodoAC = (todoId) => ({ type: DELETE_TODO, todoId });
+export const deleteAllTodoAC = () => ({ type: DELETE_ALL_TODO });
 
 export default profileReducer;

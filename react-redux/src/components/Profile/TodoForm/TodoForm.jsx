@@ -7,16 +7,28 @@ const TodoForm = (props) => {
     const { register,
         handleSubmit,
         reset,
-        formState: { isDirty } } = useForm();
+        formState: { errors, isValid } } = useForm({ mode: 'onBlur' });
 
-    const addTodo = ({todo}) => {
+    const addTodo = ({ todo }) => {
         props.onSubmit(todo);
         reset();
     }
 
     return <form className={classes.todoForm} onSubmit={handleSubmit(addTodo)}>
-        <input {...register('todo')} placeholder="Your todo" className={classes.todoInput} />
-        <button className={classes.todoButton} disabled={!isDirty}>Create todo</button>
+        <input
+            placeholder="Your todo" className={classes.todoInput}
+            {...register('todo', {
+                required: 'End your todo then add this in your list!',
+                minLength: {
+                    value: 3,
+                    message: 'Minimal length is 3 symbols!'
+                }
+            })}
+        />
+        <div>
+            {errors?.todo && <p>{errors?.todo?.message}</p>}
+        </div>
+        <button className={classes.todoButton} disabled={!isValid}>Create todo</button>
     </form>
 }
 
