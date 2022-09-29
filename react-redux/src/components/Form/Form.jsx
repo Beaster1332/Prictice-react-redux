@@ -36,7 +36,7 @@ const Form = (props) => {
                         minLength={3}
                         register={register}
                     />
-                    <div>
+                    <div className={classes.loginFormErrors}>
                         {errors?.login && <p>{errors?.login?.message || 'Error!'}</p>}
                     </div>
                     <TextField
@@ -46,7 +46,7 @@ const Form = (props) => {
                         required={'Required field!'}
                         register={register}
                     />
-                    <div>
+                    <div className={classes.loginFormErrors}>
                         {errors?.name && <p>{errors?.name?.message}</p>}
                     </div>
                     <TextField
@@ -58,7 +58,7 @@ const Form = (props) => {
                         minLength={8}
                         register={register}
                     />
-                    <div>
+                    <div className={classes.loginFormErrors}>
                         {errors?.password && <p>{errors?.password?.message || 'Error!'}</p>}
                     </div>
                     <button className={classes.submit} disabled={!isValid}>Submit</button>

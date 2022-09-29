@@ -1,15 +1,33 @@
 import React from "react";
+import { connect } from "react-redux";
+import { deleteAllTodoAC, toggleTodoAC } from "../../../redux/profileReducer";
 import classes from './TodoItem.module.css';
 
-const TodoItem = (props) => {
+const TodoItem = ({ todo, toggleTodo, deleteTodo }) => {
+
+    let completedTodoStyles = todo.completed ? classes.completedTodoText + ' ' + classes.todoText : classes.todoText;
+
     return <div className={classes.todoItem}>
         <div>
-            <span className={classes.todoText}>{props.todo.text}</span>
+            <span className={completedTodoStyles}>{todo.text}</span>
         </div>
         <div>
-            <button className={classes.deleteTodo} onClick={props.deleteTodo}>Delete</button>
+            {todo.completed ?
+                <button className={classes.uncompleteButton} onClick={() => toggleTodo(todo.id)}>Uncomplete</button> :
+                <button className={classes.completeButton} onClick={() => toggleTodo(todo.id)}>Complete</button>
+            }
+        </div>
+        <div>
+            <button className={classes.deleteTodo} onClick={() => deleteTodo(todo.id)}>Delete</button>
         </div>
     </div>
 }
 
-export default TodoItem;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        toggleTodo: (todoId) => dispatch(toggleTodoAC(todoId)),
+        deleteTodo: (todoId) => dispatch(deleteAllTodoAC(todoId))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(TodoItem);

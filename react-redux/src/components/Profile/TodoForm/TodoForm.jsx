@@ -4,10 +4,12 @@ import classes from './TodoForm.module.css';
 
 const TodoForm = (props) => {
 
-    const { register,
+    const {
+        register,
         handleSubmit,
         reset,
-        formState: { errors, isValid } } = useForm({ mode: 'onBlur' });
+        formState: { errors, isValid }
+    } = useForm({ mode: 'onBlur' });
 
     const addTodo = ({ todo }) => {
         props.onSubmit(todo);
@@ -16,16 +18,17 @@ const TodoForm = (props) => {
 
     return <form className={classes.todoForm} onSubmit={handleSubmit(addTodo)}>
         <input
-            placeholder="Your todo" className={classes.todoInput}
+            placeholder="Your todo"
+            className={classes.todoInput}
             {...register('todo', {
-                required: 'End your todo then add this in your list!',
+                required: 'End your todo and then add this in your list!',
                 minLength: {
                     value: 3,
                     message: 'Minimal length is 3 symbols!'
                 }
             })}
         />
-        <div>
+        <div className={classes.todoFormErrors}>
             {errors?.todo && <p>{errors?.todo?.message}</p>}
         </div>
         <button className={classes.todoButton} disabled={!isValid}>Create todo</button>

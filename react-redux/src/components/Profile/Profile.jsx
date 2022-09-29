@@ -9,16 +9,17 @@ const Profile = (props) => {
         props.logoutUser();
         props.deleteAllTodo();
     }
-    
+
     const addTodo = (todoText) => {
         props.addTodo(todoText);
     }
-    
-    const deleteTodo = (todoId) => {
-        props.deleteTodo(todoId);
-    }
 
-    let todoItems = props.todos.map(todo => <TodoItem key={todo.id} todo={todo} deleteTodo={() => deleteTodo(todo.id)} />)
+    let todoItems = props.todos.map(todo =>
+        <TodoItem
+            key={todo.id}
+            todo={todo}
+        />
+    )
 
     return <div className={classes.profileBlock}>
         <div className={classes.infoBlock}>

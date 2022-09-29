@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import Profile from "./Profile";
-import { addTodoAC, deleteTodoAC, deleteAllTodoAC } from "../../redux/profileReducer";
+import { addTodoAC, deleteAllTodoAC } from "../../redux/profileReducer";
 import { logoutUserAC } from "../../redux/loginReducer";
 import { withAuthRedirect } from "../hoc/withAuthRedirect";
 
@@ -18,7 +18,6 @@ const mapDispatchToProps = (dispatch) => {
         addTodo: (todoText) => dispatch(addTodoAC(todoText)),
         logoutUser: () => dispatch(logoutUserAC()),
         deleteAllTodo: () => dispatch(deleteAllTodoAC()),
-        deleteTodo: (todoId) => dispatch(deleteTodoAC(todoId)),
     }
 }
 

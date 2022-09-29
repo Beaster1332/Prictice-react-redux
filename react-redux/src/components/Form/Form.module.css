@@ -24,14 +24,35 @@
     transition: all ease-in 0.15s;
 }
 
+.loginFormErrors {
+    color: red;
+}
+
 .submit {
     display: block;
-    margin: 25px auto 0 auto;
-    padding: 7px 10px;
-    border: 1px solid grey;
-    transition: all ease 0.5s;
+    width: 100px;
+    height: 40px;
+    margin: 20px auto 0 auto;
+    border: none;
+    border-radius: 5px;
+    background-color: #27BAFF;
+    color: #fff;
+    font-weight: 600;
+    transition: all ease-in 0.1s;
+}
+
+.submit:hover {
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 .submit:active {
-    transform: scale(1.1);
+    transform: scale(1.02);
+}
+
+.submit:disabled {
+    transform: none;
+    cursor: auto;
+    background-color: grey;
+    color: aliceblue;
 }

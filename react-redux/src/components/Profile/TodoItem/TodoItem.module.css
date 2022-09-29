@@ -16,8 +16,58 @@
     margin-top: 0;
 }
 
-.todoText::first-letter {
-    color: red;
+.todoText {
+    font-weight: 500;
+}
+
+.completedTodoText {
+    color: #FF2626;
+    text-decoration: line-through;
+}
+
+.uncompleteButton {
+    min-width: 100px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF2626;
+    color: #fff;
+    font-weight: 500;
+    transition: all ease-in 0.1s;
+}
+
+.uncompleteButton:hover {
+    background-color: aquamarine;
+    color: #111;
+    transform: scale(1.05);
+}
+
+.uncompleteButton:active {
+    background-color: #27BAFF;
+    transform: scale(1.02);
+}
+
+.completeButton {
+    min-width: 100px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: aquamarine;
+    color: #111;
+    font-weight: 500;
+    transition: all ease-in 0.1s;
+}
+
+.completeButton:hover {
+    background-color: #FF2626;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.completeButton:active {
+    background-color: #27BAFF;
+    color: #fff;
+    transform: scale(1.02);
 }
 
 .deleteTodo {
@@ -33,6 +83,7 @@
 
 .deleteTodo:hover {
     background-color: aquamarine;
+    color: #111;
     transform: scale(1.05);
 }
 

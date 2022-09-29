@@ -6,12 +6,17 @@
     display: block;
     min-width: 300px;
     min-height: 50px;
+    margin: 0 auto;
     padding: 5px 10px;
     border: 2px solid black;
     border-radius: 5px;
     font-size: 18px;
     font-weight: 600;
     transition: all ease-in 0.2s;
+}
+
+.todoFormErrors {
+    color: red;
 }
 
 .todoButton {
@@ -39,4 +44,11 @@
 
 .todoButton:active {
     transform: scale(1.02);
+}
+
+.todoButton:disabled {
+    transform: none;
+    cursor: auto;
+    background-color: grey;
+    color: aliceblue;
 }
