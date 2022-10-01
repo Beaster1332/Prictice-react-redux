@@ -9,10 +9,20 @@
 }
 
 .infoBlock {
+    display: flex;
     width: 1200px;
     padding: 10px 13px;
     margin-bottom: 10px;
     border: 3px solid black;
+}
+
+.infoItem {
+    display: flex;
+    align-items: center;
+}
+
+.infoItem:nth-child(2) {
+    margin-left: 50px;
 }
 
 .logoutItem {

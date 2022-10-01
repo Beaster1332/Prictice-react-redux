@@ -39,6 +39,7 @@
 .uncompleteButton:hover {
     background-color: aquamarine;
     color: #111;
+    cursor: pointer;
     transform: scale(1.05);
 }
 
@@ -61,6 +62,7 @@
 .completeButton:hover {
     background-color: #FF2626;
     color: #fff;
+    cursor: pointer;
     transform: scale(1.05);
 }
 
@@ -84,6 +86,7 @@
 .deleteTodo:hover {
     background-color: aquamarine;
     color: #111;
+    cursor: pointer;
     transform: scale(1.05);
 }
 

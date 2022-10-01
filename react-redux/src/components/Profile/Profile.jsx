@@ -26,6 +26,9 @@ const Profile = (props) => {
             <div className={classes.infoItem}>
                 <span className={classes.logoutItem} onClick={logoutUser}>{`${props.name}`}</span>
             </div>
+            <div className={classes.infoItem}>
+                <span>&#9754; Выход можно осуществить, нажав на Ваше имя!</span>
+            </div>
         </div>
         <div className={classes.todoBlock}>
             <div className={classes.todoCreateBlock}>
