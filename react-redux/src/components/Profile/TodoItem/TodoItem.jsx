@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { deleteAllTodoAC, toggleTodoAC } from "../../../redux/profileReducer";
+import { deleteTodoAC, toggleTodoAC } from "../../../redux/profileReducer";
 import classes from './TodoItem.module.css';
 
 const TodoItem = ({ todo, toggleTodo, deleteTodo }) => {
@@ -26,7 +26,7 @@ const TodoItem = ({ todo, toggleTodo, deleteTodo }) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         toggleTodo: (todoId) => dispatch(toggleTodoAC(todoId)),
-        deleteTodo: (todoId) => dispatch(deleteAllTodoAC(todoId))
+        deleteTodo: (todoId) => dispatch(deleteTodoAC(todoId))
     }
 }
 
